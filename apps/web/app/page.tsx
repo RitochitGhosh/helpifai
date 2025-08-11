@@ -6,6 +6,17 @@ import { useMutation, useQuery } from "convex/react";
 import { api } from "@workspace/backend/_generated/api";
 import { Button } from "@workspace/ui/components/button";
 
+/**
+ * Page component that displays user management UI gated by authentication.
+ *
+ * When authenticated, renders an apps/web label, Clerk's UserButton, an "Add" button
+ * that invokes the `add` mutation from the backend, and a JSON view of users fetched
+ * via `api.users.getMany`. When unauthenticated, shows a short sign-in prompt.
+ *
+ * Note: This component does not implement loading or error handling for the query or mutation.
+ *
+ * @returns A React element representing the page.
+ */
 export default function Page() {
   const users = useQuery(api.users.getMany);
   const addUser = useMutation(api.users.add);
