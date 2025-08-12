@@ -26,7 +26,7 @@ export const AuthGaurd = ({ children }: { children: React.ReactNode }) => {
             </Authenticated>
             <Unauthenticated>
                 <AuthLayout>
-                    <SignInView />
+                    <SignInView /> // 
                 </AuthLayout>
             </Unauthenticated>
         </>
