@@ -15,7 +15,7 @@ export const useVapi = () => {
 
     useEffect(() => {
         // Only for testing... each customer needs to add their own APIKEY
-        const vapiInstance = new Vapi(process.env.NEXT_PUBLIC_VAPI_PUBLIC_KEY!); // ✅ Public key here
+        const vapiInstance = new Vapi("");
         setVapi(vapiInstance);
 
         vapiInstance.on("call-start", () => {
@@ -65,7 +65,7 @@ export const useVapi = () => {
         setIsConnecting(true);
         if (vapi) {
             // Only for testing... each customer needs to add their own APIKEY
-            vapi.start("772c91fe-f9c1-4d6e-b3e2-6a8e84fd8c68") //Sobjanta Bankwala
+            vapi.start("") //Sobjanta Bankwala
         }
     }
 
